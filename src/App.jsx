@@ -9,12 +9,12 @@ const apiKey = "a084759fbe9642c6987115928251703";
 function App() {
   const [query, setQuery] = useState("");
   const [weather, setWeather] = useState({});
-  const [isLoading, setIsLoaading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
   function handleSubmitForm(e) {
     e.preventDefault();
     if (!query) return;
-    setIsLoaading(true)
+    setIsLoading(true)
     fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${query}`)
       .then((res) => {
         if (!res.ok) throw new Error(`Error: ${res.statusText}`);
@@ -23,7 +23,7 @@ function App() {
       .then((data) => {
         console.log(data);
         setWeather(data);
-        setIsLoaading(false)
+        setIsLoading(false)
       })
       .catch((err) => console.log(err));
 
