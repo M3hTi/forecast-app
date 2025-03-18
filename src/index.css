@@ -29,6 +29,10 @@ body {
   max-width: 400px;
 }
 
+.app {
+  position: relative;
+}
+
 /* Form Styles */
 form {
   display: flex;
@@ -128,13 +132,8 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
   width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: var(--primary-color);
-  z-index: 1000;
+  margin: 1rem 0 2rem;
 }
 
 /* HTML: <div class="loader"></div> */
@@ -156,6 +155,10 @@ button {
   border-radius: inherit;
   background: currentColor;
   animation: l6 2s infinite;
+}
+
+.Error {
+  color: red;
 }
 
 @keyframes l6 {
