@@ -17,9 +17,10 @@ function App() {
     e.preventDefault();
     if (!query) return;
     setIsLoading(true);
+    setError("");
     fetch(`https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${query}`)
       .then((res) => {
-        console.log(res)
+        console.log(res);
         if (!res.ok) throw new Error(`something wrong!`);
         return res.json();
       })
@@ -32,7 +33,7 @@ function App() {
       .catch((error) => {
         console.log(error);
         setError(error.message);
-        setIsLoading(false)
+        setIsLoading(false);
       });
 
     setQuery("");
